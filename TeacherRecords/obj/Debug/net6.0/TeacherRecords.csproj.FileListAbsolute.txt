@@ -1,0 +1,30 @@
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\bin\Debug\net6.0\TeacherRecords.exe
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\bin\Debug\net6.0\TeacherRecords.deps.json
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\bin\Debug\net6.0\TeacherRecords.runtimeconfig.json
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\bin\Debug\net6.0\TeacherRecords.dll
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\bin\Debug\net6.0\ref\TeacherRecords.dll
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\bin\Debug\net6.0\TeacherRecords.pdb
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.csproj.AssemblyReference.cache
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.AssemblyInfoInputs.cache
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.AssemblyInfo.cs
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.csproj.CoreCompileInputs.cache
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.dll
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\ref\TeacherRecords.dll
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.pdb
+D:\.NET Course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.genruntimeconfig.cache
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\bin\Debug\net6.0\TeacherRecords.exe
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\bin\Debug\net6.0\TeacherRecords.deps.json
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\bin\Debug\net6.0\TeacherRecords.runtimeconfig.json
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\bin\Debug\net6.0\TeacherRecords.dll
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\bin\Debug\net6.0\ref\TeacherRecords.dll
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\bin\Debug\net6.0\TeacherRecords.pdb
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.csproj.AssemblyReference.cache
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.GeneratedMSBuildEditorConfig.editorconfig
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.AssemblyInfoInputs.cache
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.AssemblyInfo.cs
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.csproj.CoreCompileInputs.cache
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.dll
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\ref\TeacherRecords.dll
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.pdb
+D:\dotnet-course\Projects\Project1\TeacherRecords\TeacherRecords\obj\Debug\net6.0\TeacherRecords.genruntimeconfig.cache
