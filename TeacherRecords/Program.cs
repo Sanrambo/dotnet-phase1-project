@@ -46,7 +46,7 @@ namespace TeacherRecords
                 students.Add(newStudents);
             }
 
-            Console.WriteLine("Press the needed option\n 1- Add student\n 2- List students\n 3- Search for student\n 4- Remove student");
+            Console.WriteLine("Press the needed option\n 1- Add student\n 2- List students\n 3- Search for student\n 4- Edit student");
             var c = Console.ReadLine();
 
 
@@ -152,7 +152,7 @@ namespace TeacherRecords
                     break;
 
                     case "4":
-                    Console.WriteLine("Choose the way to remove student\n 1- By ID\n 2- By Name");
+                    Console.WriteLine("Choose what you want to edit\n 1- Name\n 2- Section");
                     var removeId = Console.ReadLine();
 
                     Console.WriteLine("Enter the new value:");
