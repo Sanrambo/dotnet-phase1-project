@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TeacherRecords
 {
-    public class Student
+    public class Teacher
     {
 
     public string Id { get; set; }

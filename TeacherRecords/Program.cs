@@ -54,103 +54,21 @@ namespace TeacherRecords
 
             switch (c) {
                 case "1":
-                    // public void Inserted(int id, string Name, string Class) {
-                    //User insert data
-                    Console.WriteLine("Insert ID, Name and Class of the new teacher:");
 
-                    Console.WriteLine("ID: ");
-                    string insertedId = Console.ReadLine();
-                    Console.WriteLine("Name: ");
-                    string insertedName = Console.ReadLine();
-                    Console.WriteLine("Class: ");
-                    string insertedClass = Console.ReadLine();
-
-
-                    //Store inserted data into teacher List
-                    if (insertedId != "" && insertedClass != "" && insertedName != "") {
-                        Teacher teacherAssign = new Teacher
-                        {
-                            Id = insertedId,
-                            Name = insertedName,
-                            Class = insertedClass
-                        };
-
-
-                        teachers.Add(teacherAssign);
-
-
-                        //Define data List
-                        List<string> data = new List<string>();
-
-                        //Go through teacher List and store the inserted data into "data" List
-                        foreach (var teacher in teachers)
-                        {
-                            data.Add($"{teacher.Id},{teacher.Name},{teacher.Class}");
-                        }
-
-                        //Write only the inserted data which is store in "data" List into the text file
-
-                        File.WriteAllLines(@"records.txt", data);
-
-
-                        Console.WriteLine("Data has been inserted");
-
-
-
-                    }
-                    else
-                    {
-                        Console.WriteLine("Please enter proper input");
-                    }
+                    AddTeacher(teachers);
+                   
 
                     break;
                 case "2":
 
+                    listTeachers(teachers);
                     
-                    //Print the list from txt file to check if the data i` s inserted
-                    Console.WriteLine("----- Print the data: ");
-                    foreach (var teacher in teachers)
-                    {
-                        //Printing the output in a specific form seperated by |
-                        Console.WriteLine($"{teacher.Id} | {teacher.Name} | {teacher.Class}");
-                    }
 
                     break;
                 case "3":
-                    Console.WriteLine("Choose the way to find the teacher\n 1- By ID\n 2- By Name");
-                    var optionId = Console.ReadLine();
 
-                    switch (optionId) {
+                    findTeacher(teachers);
 
-                    case "1":
-                    Console.WriteLine("Please enter teacher ID:");
-                    var gotId = Console.ReadLine();
-
-                    foreach (var teacherId in teachers)
-                    {
-                        if (gotId == teacherId.Id)
-                        {
-                            Console.WriteLine($"{teacherId.Id} | {teacherId.Name} | {teacherId.Class}");
-                        }
-                    }
-
-                    break;
-                    case "2":
-                    Console.WriteLine("Please enter teacher name:");
-                    var gotName = Console.ReadLine();
-
-                    foreach (var teacherName in teachers)
-                    {
-                        if (gotName == teacherName.Name)
-                        {
-                            Console.WriteLine($"{teacherName.Id} | {teacherName.Name} | {teacherName.Class}");
-                        }
-                    }
-                    break;
-                        default:
-                            break;
-
-            }
                     break;
 
                     case "4":
@@ -205,5 +123,110 @@ namespace TeacherRecords
         }
         //Let user enter something or press enter to finish the program 
         //Console.ReadLine();
-                 }
+
+        private static void AddTeacher(List<Teacher> teachers)
+        {
+            // public void Inserted(int id, string Name, string Class) {
+            //User insert data
+            Console.WriteLine("Insert ID, Name and Class of the new teacher:");
+
+            Console.WriteLine("ID: ");
+            string insertedId = Console.ReadLine();
+            Console.WriteLine("Name: ");
+            string insertedName = Console.ReadLine();
+            Console.WriteLine("Class: ");
+            string insertedClass = Console.ReadLine();
+
+
+            //Store inserted data into teacher List
+            if (insertedId != "" && insertedClass != "" && insertedName != "")
+            {
+                Teacher teacherAssign = new Teacher
+                {
+                    Id = insertedId,
+                    Name = insertedName,
+                    Class = insertedClass
+                };
+
+
+                teachers.Add(teacherAssign);
+
+
+                //Define data List
+                List<string> data = new List<string>();
+
+                //Go through teacher List and store the inserted data into "data" List
+                foreach (var teacher in teachers)
+                {
+                    data.Add($"{teacher.Id},{teacher.Name},{teacher.Class}");
+                }
+
+                //Write only the inserted data which is store in "data" List into the text file
+
+                File.WriteAllLines(@"records.txt", data);
+
+
+                Console.WriteLine("Data has been inserted");
+
+
+
+            }
+            else
+            {
+                Console.WriteLine("Please enter proper input");
+            }
+        }
+
+        private static void listTeachers(List<Teacher> teachers)
+        {
+
+            //Print the list from txt file to check if the data i` s inserted
+            Console.WriteLine("----- Print the data: ");
+            foreach (var teacher in teachers)
+            {
+                //Printing the output in a specific form seperated by |
+                Console.WriteLine($"{teacher.Id} | {teacher.Name} | {teacher.Class}");
+            }
+        }
+
+        private static void findTeacher(List<Teacher> teachers)
+        {
+
+            Console.WriteLine("Choose the way to find the teacher\n 1- By ID\n 2- By Name");
+            var optionId = Console.ReadLine();
+
+            switch (optionId)
+            {
+
+                case "1":
+                    Console.WriteLine("Please enter teacher ID:");
+                    var gotId = Console.ReadLine();
+
+                    foreach (var teacherId in teachers)
+                    {
+                        if (gotId == teacherId.Id)
+                        {
+                            Console.WriteLine($"{teacherId.Id} | {teacherId.Name} | {teacherId.Class}");
+                        }
+                    }
+
+                    break;
+                case "2":
+                    Console.WriteLine("Please enter teacher name:");
+                    var gotName = Console.ReadLine();
+
+                    foreach (var teacherName in teachers)
+                    {
+                        if (gotName == teacherName.Name)
+                        {
+                            Console.WriteLine($"{teacherName.Id} | {teacherName.Name} | {teacherName.Class}");
+                        }
+                    }
+                    break;
+                default:
+                    break;
+
+            }
+        }
+        }
     }
