@@ -4,6 +4,7 @@ using System.Linq;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 
 namespace TeacherRecords
@@ -18,8 +19,9 @@ namespace TeacherRecords
             //Store the text file data in a List
             List<string> rows = File.ReadAllLines(myPath).ToList();
 
-            //Save the retrieved data as Student type
-            List<Student> students = new List<Student>();
+
+            //Save the retrieved data as teacher type
+            List<Teacher> teachers = new List<Teacher>();
 
             //Go through the list
             foreach (string row in rows)
@@ -28,25 +30,25 @@ namespace TeacherRecords
                 //Split it by comma
                 string[] split = row.Split(',');
                 
-                //Define the Student class
-                Student newStudents = new Student();
+                //Define the teacher class
+                Teacher newTeachers = new Teacher();
 
                 //Go through every word and split it by "," and store it in the object
                 if (split.Length == 3) {
-                    newStudents.Id = split[0];
-                    newStudents.Name = split[1];
-                    newStudents.Class = split[2];
+                    newTeachers.Id = split[0];
+                    newTeachers.Name = split[1];
+                    newTeachers.Class = split[2];
                 }
                 else
                 {
                     Console.WriteLine("Something wrong, please try again.");
                 }
 
-                //Store it in student List
-                students.Add(newStudents);
+                //Store it in teacher List
+                teachers.Add(newTeachers);
             }
 
-            Console.WriteLine("Press the needed option\n 1- Add student\n 2- List students\n 3- Search for student\n 4- Edit student");
+            Console.WriteLine("Press the needed option\n 1- Add teacher\n 2- List teachers\n 3- Search for teacher\n 4- Edit teacher");
             var c = Console.ReadLine();
 
 
@@ -54,7 +56,7 @@ namespace TeacherRecords
                 case "1":
                     // public void Inserted(int id, string Name, string Class) {
                     //User insert data
-                    Console.WriteLine("Insert ID, Name and Class of the new student:");
+                    Console.WriteLine("Insert ID, Name and Class of the new teacher:");
 
                     Console.WriteLine("ID: ");
                     string insertedId = Console.ReadLine();
@@ -64,9 +66,9 @@ namespace TeacherRecords
                     string insertedClass = Console.ReadLine();
 
 
-                    //Store inserted data into student List
+                    //Store inserted data into teacher List
                     if (insertedId != "" && insertedClass != "" && insertedName != "") {
-                        Student studentAssign = new Student
+                        Teacher teacherAssign = new Teacher
                         {
                             Id = insertedId,
                             Name = insertedName,
@@ -74,16 +76,16 @@ namespace TeacherRecords
                         };
 
 
-                        students.Add(studentAssign);
+                        teachers.Add(teacherAssign);
 
 
                         //Define data List
                         List<string> data = new List<string>();
 
-                        //Go through student List and store the inserted data into "data" List
-                        foreach (var student in students)
+                        //Go through teacher List and store the inserted data into "data" List
+                        foreach (var teacher in teachers)
                         {
-                            data.Add($"{student.Id},{student.Name},{student.Class}");
+                            data.Add($"{teacher.Id},{teacher.Name},{teacher.Class}");
                         }
 
                         //Write only the inserted data which is store in "data" List into the text file
@@ -104,44 +106,44 @@ namespace TeacherRecords
                     break;
                 case "2":
 
-
+                    
                     //Print the list from txt file to check if the data i` s inserted
                     Console.WriteLine("----- Print the data: ");
-                    foreach (var student in students)
+                    foreach (var teacher in teachers)
                     {
                         //Printing the output in a specific form seperated by |
-                        Console.WriteLine($"{student.Id} | {student.Name} | {student.Class}");
+                        Console.WriteLine($"{teacher.Id} | {teacher.Name} | {teacher.Class}");
                     }
 
                     break;
                 case "3":
-                    Console.WriteLine("Choose the way to find the student\n 1- By ID\n 2- By Name");
+                    Console.WriteLine("Choose the way to find the teacher\n 1- By ID\n 2- By Name");
                     var optionId = Console.ReadLine();
 
                     switch (optionId) {
 
                     case "1":
-                    Console.WriteLine("Please enter student ID:");
+                    Console.WriteLine("Please enter teacher ID:");
                     var gotId = Console.ReadLine();
 
-                    foreach (var studentId in students)
+                    foreach (var teacherId in teachers)
                     {
-                        if (gotId == studentId.Id)
+                        if (gotId == teacherId.Id)
                         {
-                            Console.WriteLine($"{studentId.Id} | {studentId.Name} | {studentId.Class}");
+                            Console.WriteLine($"{teacherId.Id} | {teacherId.Name} | {teacherId.Class}");
                         }
                     }
 
                     break;
                     case "2":
-                    Console.WriteLine("Please enter student name:");
+                    Console.WriteLine("Please enter teacher name:");
                     var gotName = Console.ReadLine();
 
-                    foreach (var studentName in students)
+                    foreach (var teacherName in teachers)
                     {
-                        if (gotName == studentName.Name)
+                        if (gotName == teacherName.Name)
                         {
-                            Console.WriteLine($"{studentName.Id} | {studentName.Name} | {studentName.Class}");
+                            Console.WriteLine($"{teacherName.Id} | {teacherName.Name} | {teacherName.Class}");
                         }
                     }
                     break;
@@ -159,40 +161,40 @@ namespace TeacherRecords
                     var name = Console.ReadLine();
 
                     //StreamReader reading = File.OpenText(@"records.txt");
+                    List<string> edited = new List<string>();
 
-                    foreach (var studentRemoved in students)
+
+                    foreach (var teacherRemoved in teachers)
                     {
-                        if (removeId == studentRemoved.Id)
+                        if (removeId == teacherRemoved.Id)
                         {
-                            //Student studentRemove = new Student
-                            //{
-                            //    Id = studentRemoved.Id,
-                            //    Name = studentRemoved.Name,
-                            //    Class = studentRemoved.Class
-                            //};
+                            
 
-                            studentRemoved.Name = name;
-
-
-                            // Console.WriteLine(studentRemove);
-
-                            //=students.Remove(studentRemove);
-                            //File.WriteAllLines(myPath, students);
-                            break;
-
-                            //Console.WriteLine("Removed");
+                            teacherRemoved.Name = name;
+                            
                         }
 
-                      
-
 
                     }
 
-                    foreach (var student in students)
+                    //var objToString = teachers.OfType<string>();
+                    
+
+                    foreach (var teacher in teachers)
                     {
+
                         //Printing the output in a specific form seperated by |
-                        Console.WriteLine($"{student.Id} | {student.Name} | {student.Class}");
+                        Console.WriteLine($"{teacher.Id} | {teacher.Name} | {teacher.Class}");
+
                     }
+                    //List<object> objects = new List<object>();
+
+                    //List<string> objToString = teachers.Se    lect(s => (string)s).ToList();
+
+                    List<string> objToString = teachers.ConvertAll(f => f.ToString());
+                    //Console.WriteLine(teachers.Id);
+                    //var objToString = teachers.OfType<string>();
+                    File.WriteAllLines(myPath, objToString);
 
                     break;
                 default:

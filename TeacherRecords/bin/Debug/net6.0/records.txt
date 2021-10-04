@@ -1,4 +1,2 @@
-1,Ahmed Mohammed,Section A
-2,Khalid Abdo,Section B
-3,Nada Amir,Section C
-4,Samer nad,Section D
+TeacherRecords.Student
+TeacherRecords.Student
